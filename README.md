@@ -16,26 +16,78 @@ A quick profiling about metagenomes data
   - kraken2>=2.1.1
   - bracken>=2.5
 
-# how to run
+# install
+
+```
 git clone https://github.com/weiting-liang/metaprof.git
 
 conda env create -n metaprof -f ./rules/env.yaml
 conda activate metaprof
+```
 
-# database prepare
+#database prepare
+
+human reference
+https://github.com/marbl/CHM13
+```
 mkdir /path/database
 cd database && mkdir humanhost && cd humanhost
 wget https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/analysis_set/chm13v2.0.fa.gz
 mkdir bowtie2_index && cd bowtie2_index
 gzip ../chm13v2.0.fa.gz -d
 bowtie2-build chm13v2.0.fa chm13v2
+```
 
+metaphlan3
+```
 cd /path/database
-mkdir metaphlan
+mkdir metaphlan && cd metaphlan
 metaphlan --install --index mpa_v30_CHOCOPhlAn_201901 --bowtie2db metaphlan_database
+```
 
+kraken2
+```
 cd /path/database
-mkdir kraken2
+mkdir kraken2 && cd kraken_pub
+wget https://genome-idx.s3.amazonaws.com/kraken/k2_standard_8gb_20210517.tar.gz
+tar -xzvf k2_standard_8gb_20210517.tar.gz -C ./k2_standard_8gb_20210517
+```
+
+# run
+change the samples.txt to adapt to your data
+custom the config.yaml database's path and parameters
+
+```
+#dry run
+snakemake --snakefile rules/profile.smk -n
+#test
+snakemake --snakefile rules/profile.smk --core 24 2> smk.log &
+#cluster: custom the cluster.yaml
+nohup sh snakemake.sh &
+```
+
+# output
+results files:
+2.results/
+  filter_summary.txt
+  metaphlan3.profile.merge.txt
+  metaphlan3_vir.profile.merge.txt
+  bracken.merged.abundance.profile.*.tsv
+
+#assay:
+1.assay
+  01.trimming/
+  02.rmhost/
+  03.profile/
+  benchmarks/   #check the cpu's time and max_vms to optimize the cluster's parameters
+  cluster_logs/ 
+  logs/         #find programs' errors
+
+
+
+
+
+
 
 
 
