@@ -55,8 +55,8 @@ tar -xzvf k2_standard_20210517.tar.gz -C ./k2_standard_20210517
 ```
 
 # run
-change the samples.txt to adapt to your data
-custom the config.yaml database's path and parameters
+- change the samples.txt to adapt to your data  
+- custom the config.yaml database's path and parameters
 
 ```
 #dry run
