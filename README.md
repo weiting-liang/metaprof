@@ -49,8 +49,8 @@ kraken2
 ```
 cd /path/database
 mkdir kraken2 && cd kraken_pub
-wget https://genome-idx.s3.amazonaws.com/kraken/k2_standard_8gb_20210517.tar.gz
-tar -xzvf k2_standard_8gb_20210517.tar.gz -C ./k2_standard_8gb_20210517
+wget https://genome-idx.s3.amazonaws.com/kraken/k2_standard_20210517.tar.gz
+tar -xzvf k2_standard_20210517.tar.gz -C ./k2_standard_20210517
 ```
 
 # run
