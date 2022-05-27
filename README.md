@@ -84,23 +84,6 @@ results files:
   logs/         #find programs' errors
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# references
+https://github.com/ohmeta/metapi/blob/master/metapi/Snakefile
+https://github.com/liu930724/meta_profile
