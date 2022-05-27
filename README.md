@@ -21,6 +21,7 @@ A quick profiling about metagenomes data
 ```
 git clone https://github.com/weiting-liang/metaprof.git
 
+cd metaprof
 conda env create -n metaprof -f ./rules/env.yaml
 conda activate metaprof
 ```
