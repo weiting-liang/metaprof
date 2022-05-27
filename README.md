@@ -1,4 +1,4 @@
-# metaprof
+# metaprof v2.0
 A quick profiling about metagenomes data
 
 
@@ -25,8 +25,8 @@ conda env create -n metaprof -f ./rules/env.yaml
 conda activate metaprof
 ```
 
-#database prepare
 
+#database prepare  
 human reference
 https://github.com/marbl/CHM13
 ```
@@ -67,23 +67,24 @@ nohup sh snakemake.sh &
 ```
 
 # output
-results files:
-2.results/
-  filter_summary.txt
-  metaphlan3.profile.merge.txt
-  metaphlan3_vir.profile.merge.txt
-  bracken.merged.abundance.profile.*.tsv
 
-#assay:
-1.assay
-  01.trimming/
-  02.rmhost/
-  03.profile/
-  benchmarks/   #check the cpu's time and max_vms to optimize the cluster's parameters
-  cluster_logs/ 
-  logs/         #find programs' errors
+2.results/  
+  filter_summary.txt  
+  metaphlan3.profile.merge.txt  
+  metaphlan3_vir.profile.merge.txt  
+  bracken.merged.abundance.profile.*.tsv  
+
+#assay:  
+1.assay  
+  01.trimming/  
+  02.rmhost/  
+  03.profile/  
+  benchmarks/   #check the cpu's time and max_vms to optimize the cluster's parameters  
+  cluster_logs/   
+  logs/         #find programs' errors  
 
 
 # references
 https://github.com/ohmeta/metapi/blob/master/metapi/Snakefile
+
 https://github.com/liu930724/meta_profile
