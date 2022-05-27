@@ -34,9 +34,9 @@ https://github.com/marbl/CHM13
 mkdir /path/database
 cd database && mkdir humanhost && cd humanhost 
 wget https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/analysis_set/chm13v2.0.fa.gz
+gzip chm13v2.0.fa.gz -d
 mkdir bowtie2_index && cd bowtie2_index
-gzip ../chm13v2.0.fa.gz -d ./
-bowtie2-build chm13v2.0.fa chm13v2
+bowtie2-build ../chm13v2.0.fa chm13v2
 ```
 
 metaphlan3
