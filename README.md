@@ -55,7 +55,8 @@ tar -xzvf k2_standard_20210517.tar.gz -C ./k2_standard_20210517
 ```
 
 # run
-- change the `samples.txt` to adapt to your data  
+- change the `samples.txt` to adapt to your data
+-   separator should be "\t": id^Ifq1^Ifq2$
 - custom the `config.yaml` database's path and parameters
 
 ```
