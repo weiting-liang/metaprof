@@ -62,7 +62,7 @@ tar -xzvf k2_standard_20210517.tar.gz -C ./k2_standard_20210517
 #dry run
 snakemake --snakefile rules/profile.smk -n
 #test
-snakemake --snakefile rules/profile.smk --core 24 2> smk.log &
+snakemake --snakefile rules/profile.smk --core 16 2> smk.log &
 #cluster: custom the cluster.yaml
 nohup sh snakemake.sh &
 ```
