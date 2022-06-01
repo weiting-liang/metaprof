@@ -1,4 +1,4 @@
 id  fq1 fq2
-sample1 ./test_data/test1.1.fq.gz ./test_data/test1.2.fq.gz
-sample2 ./test_data/test2.1.fq.gz ./test_data/test2.2.fq.gz
-sample3 ./test_data/test3.1.fq.gz ./test_data/test3.2.fq.gz
+sample1 test_data/test1.1.fq.gz test_data/test1.2.fq.gz
+sample2 test_data/test2.1.fq.gz test_data/test2.2.fq.gz
+sample3 test_data/test3.1.fq.gz test_data/test3.2.fq.gz
