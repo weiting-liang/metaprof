@@ -1,0 +1,40 @@
+params:
+    fastp:
+      min_len : 70 # Recommended value >= 30
+      adapter_r1: "AAGTCGGAGGCCAAGCGGTCTTAGGAAGACAA" #BGI-SEQ
+      adapter_r2: "AAGTCGGATCGTAGCCATGTCGTTCTGTGAGCCAAGGAGTTG" #BGI-SEQ
+    rmhost:
+      bowtie2_index: "/ldfssz1/ST_META/share/User/zhujie/database/galaxy_indexes/chm13v2/bowtie2_index/chm13v2" 
+      threads: 2
+    metaphlan4:
+      do: True
+      bowtie2db: "/hwfssz1/ST_HEALTH/P18Z10200N0127/LXM/chenjunhong/workdir/MP4/metaphlan_databases"
+      index: "mpa_vOct22_CHOCOPhlAnSGB_202212"
+      threads: 2
+    kraken2:
+      do: False
+      db: "/ldfssz1/ST_META/share/User/zhujie/database/kraken2/k2_standard_20210517"
+      confidence: 0
+      threads: 2
+    bracken:
+      reads_len: 100
+      level: ["S"]    #["D", "P", "C", "O", "F", "G", "S"]
+
+assay:
+    trimming: "1.assay/01.trimming"
+    rmhost: "1.assay/02.rmhost"
+    profile: 
+        metaphlan4: "1.assay/03.profile/metaphlan4"
+        kraken2: "1.assay/03.profile/kraken2"
+
+results:
+    "2.result"
+
+logs:
+    trimming: "1.assay/logs/01.trimming"
+    rmhost: "1.assay/logs/02.rmhost"
+    profile: "1.assay/logs/03.profile"
+
+benchmarks:
+    filter: "1.assay/benchmarks/01.filter"
+    profile: "1.assay/benchmarks/02.profile"

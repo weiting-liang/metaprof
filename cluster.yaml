@@ -1,0 +1,56 @@
+localrules: all
+
+__default__:
+  queue: "st.q"
+  project: "P18Z10200N0127"
+  workdir: "./"
+  mem: "1G"
+  cores: 1
+
+filter:
+  mem: "10G"
+  cores: 5
+  output: "1.assay/cluster_logs/{rule}.{wildcards.sample}.o"
+  error: "1.assay/cluster_logs/{rule}.{wildcards.sample}.e"
+
+seqkit_stat:
+  mem: "1G"
+  cores: 1
+  output: "1.assay/cluster_logs/{rule}.o"
+  error: "1.assay/cluster_logs/{rule}.e"
+
+filter_summary:
+  mem: "0.1G"
+  cores: 1
+  output: "1.assay/cluster_logs/{rule}.o"
+  error: "1.assay/cluster_logs/{rule}.e"
+
+metaphlan4:
+  mem: "18G"
+  cores: 7
+  output: "1.assay/cluster_logs/{rule}.{wildcards.sample}.o"
+  error: "1.assay/cluster_logs/{rule}.{wildcards.sample}.e"
+
+kraken2:
+  mem: "40G"
+  cores: 2
+  output: "1.assay/cluster_logs/{rule}.{wildcards.sample}.o"
+  error: "1.assay/cluster_logs/{rule}.{wildcards.sample}.e"
+
+bracken:
+  mem: "1G"
+  cores: 2
+  output: "1.assay/cluster_logs/{rule}.{wildcards.sample}.o"
+  error: " 1.assay/cluster_logs/{rule}.{wildcards.sample}.e"
+
+merge_profile_mp4:
+  mem: "0.1G"
+  cores: 1
+  output: "1.assay/cluster_logs/{rule}.o"
+  error: "1.assay/cluster_logs/{rule}.e"
+
+merge_profile_bracken:
+  mem: "0.1G"
+  cores: 1
+  output: "1.assay/cluster_logs/{rule}.o"
+  error: "1.assay/cluster_logs/{rule}.e"
