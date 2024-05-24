@@ -1,6 +1,6 @@
 # metaprof v2.2
 A quick profiling about metagenomes data
-update metaphlan4
+--update metaphlan4
 
 # environment
   - biopython>=1.76
