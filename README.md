@@ -1,12 +1,12 @@
-# metaprof v2.0
+# metaprof v2.2
 A quick profiling about metagenomes data
-
+update metaphlan4
 
 # environment
   - biopython>=1.76
   - bowtie2>=2.3.5.1
   - fastp>=0.20.1
-  - metaphlan>=3.0
+  - metaphlan>=4.1.0
   - numpy>=1.18.4
   - pandas>=1.0.3
   - pigz>=2.3.4
@@ -43,7 +43,7 @@ metaphlan3
 ```
 cd /path/database
 mkdir metaphlan && cd metaphlan
-metaphlan --install --index mpa_v30_CHOCOPhlAn_201901 --bowtie2db metaphlan_database
+metaphlan --install --index mpa_vOct22_CHOCOPhlAnSGB_202212 --bowtie2db metaphlan_database
 ```
 
 kraken2
@@ -71,8 +71,7 @@ nohup sh snakemake.sh &
 
 2.results/  
   filter_summary.txt  
-  metaphlan3.profile.merge.txt  
-  metaphlan3_vir.profile.merge.txt  
+  metaphlan4.profile.merge.txt 
   bracken.merged.abundance.profile.*.tsv  
 
 #assay:  
