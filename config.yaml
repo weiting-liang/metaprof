@@ -4,16 +4,16 @@ params:
       adapter_r1: "AAGTCGGAGGCCAAGCGGTCTTAGGAAGACAA" #BGI-SEQ
       adapter_r2: "AAGTCGGATCGTAGCCATGTCGTTCTGTGAGCCAAGGAGTTG" #BGI-SEQ
     rmhost:
-      bowtie2_index: "/ldfssz1/ST_META/share/User/zhujie/database/galaxy_indexes/chm13v2/bowtie2_index/chm13v2" 
+      bowtie2_index: "/path/database/humanhostbowtie2_index/chm13v2"
       threads: 2
     metaphlan4:
       do: True
-      bowtie2db: "/hwfssz1/ST_HEALTH/P18Z10200N0127/LXM/chenjunhong/workdir/MP4/metaphlan_databases"
+      bowtie2db: "/path/database/metaphlan/metaphlan_databases"
       index: "mpa_vOct22_CHOCOPhlAnSGB_202212"
       threads: 2
     kraken2:
       do: False
-      db: "/ldfssz1/ST_META/share/User/zhujie/database/kraken2/k2_standard_20210517"
+      db: "/path/database/kraken_pub/k2_standard_20210517"
       confidence: 0
       threads: 2
     bracken:
